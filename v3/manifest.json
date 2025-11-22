@@ -1,0 +1,52 @@
+{
+  "name": "MafiaScum Modtools",
+  "description": "Aid in the playing and hosting of games on MafiaScum",
+  "version": "1.0.3",
+  "icons": {
+    "128": "images/logo-128.png",
+    "512": "images/logo-512.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://forum.mafiascum.net/*"
+      ],
+      "js": [
+        "main.js"
+      ],
+      "css": [
+        "styling.css"
+      ]
+    }
+  ],
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://forum.mafiascum.net/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "templates/*",
+        "images/*"
+      ],
+      "matches": [
+        "https://forum.mafiascum.net/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs",
+    "unlimitedStorage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "images/logo-128.png",
+      "512": "images/logo-512.png"
+    }
+  }
+}
